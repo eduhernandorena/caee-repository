@@ -14,8 +14,8 @@ public interface CaeeRepository extends JpaRepository<Caee, Long> {
 
     Optional<List<Caee>> findByDescriptionContainingIgnoreCase(String description);
 
-    @Query("select o from Caee o where (upper(description) like %?1% or code = ?2) and id <> ?3")
-    Optional<Caee> findOneByDescriptionContainingIgnoreCaseOrCodeAndIdNot(String description, String code, Long id);
+    @Query("select o from Caee o where (upper(description) = upper(?1) or code = ?2) and id <> ?3")
+    Optional<Caee> findOneByDescriptionIgnoreCaseOrCodeAndIdNot(String description, String code, Long id);
 
     void deleteById(Long id);
 }

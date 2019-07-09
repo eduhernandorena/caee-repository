@@ -40,7 +40,7 @@ public class CaeeService {
     }
 
     public Caee update(Caee caee) {
-        Optional<Caee> optCaee = caeeRepository.findOneByDescriptionContainingIgnoreCaseOrCodeAndIdNot(caee.getDescription(), caee.getCode(), caee.getId());
+        Optional<Caee> optCaee = caeeRepository.findOneByDescriptionIgnoreCaseOrCodeAndIdNot(caee.getDescription(), caee.getCode(), caee.getId());
         if (optCaee.isEmpty()) {
             return caeeRepository.save(caee);
         } else {
