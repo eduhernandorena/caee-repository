@@ -21,12 +21,12 @@ public class CaeeService {
 
     public List<Caee> findByDescription(String description) {
         Optional<List<Caee>> optCaee = caeeRepository.findByDescriptionContainingIgnoreCase(description);
-        return optCaee.orElseGet(ArrayList::new);
+        return optCaee.orElse(ArrayList::new);
     }
 
     public Caee findByCode(String code) {
         Optional<Caee> optCaee = caeeRepository.findByCode(code);
-        return optCaee.orElseGet(null);
+        return optCaee.orElse(null);
     }
 
     public Caee save(Caee caee) {
