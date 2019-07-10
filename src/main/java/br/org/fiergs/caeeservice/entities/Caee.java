@@ -2,10 +2,7 @@ package br.org.fiergs.caeeservice.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Getter
@@ -14,10 +11,12 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 @Entity
+@Table(name = "CAD_CAEE")
+@SequenceGenerator(name = "seqCad_Caee", sequenceName = "SEQCAD_CAEE", allocationSize = 1)
 public class Caee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "seqCad_Caee")
     private Long id;
 
     @NotEmpty(message = "Código é obrigatório!")
