@@ -21,14 +21,9 @@ public class CaeeController {
         return caeeService.findAll();
     }
 
-    @GetMapping("/description/{description}")
-    public List<Caee> listByDescription(@PathVariable("description") String description) {
-        return caeeService.findByDescription(description);
-    }
-
-    @GetMapping("/code/{code}")
-    public Caee findByCode(@PathVariable("code") String code) {
-        return caeeService.findByCode(code);
+    @GetMapping("/name/{name}")
+    public Caee listByName(@PathVariable("name") String name) {
+        return caeeService.findByName(name);
     }
 
     @PostMapping
