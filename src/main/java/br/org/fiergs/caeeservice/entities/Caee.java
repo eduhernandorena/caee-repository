@@ -20,8 +20,8 @@ public class Caee {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "seqCCor_Caee")
     private Long id;
 
-    @Size(max = 30, message = "A chave deve conter no máximo 30 caracteres!")
-    private String chave;
+    @Size(max = 30, message = "A key deve conter no máximo 30 caracteres!")
+    private String key;
 
     @NotEmpty(message = "Nome é obrigatória!")
     @Size(max = 150, message = "O nome deve conter no máximo 150 caracteres!")
